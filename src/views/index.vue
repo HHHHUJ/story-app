@@ -1,8 +1,8 @@
 <template>
   <transition appear appear-to-class="animated lightSpeedIn">
     <div class="index-wrap">
-      <h2 class="lunar">农历十月初八</h2>
-      <p class="title">欢迎收听中国民间故事</p>
+      <h2 class="lunar redfff">农历十月初八</h2>
+      <p class="title reddd">欢迎收听中国民间故事</p>
       <div class="content-wrap">
         <h2 class="content-title">民间故事-半夜来的神秘美女</h2>
         <p class="desc">----故事由网友提供，喜欢的朋友请分享转发</p>
