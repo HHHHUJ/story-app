@@ -6,7 +6,7 @@
       <div class="content-wrap">
         <h2 class="content-title">民间故事-半夜来的神秘美女</h2>
         <p class="desc">----故事由网友提供，喜欢的朋友请分享转发</p>
-        <div id="content" class="content">某天，和施耐1111124457891邻而居的顾员庵比邻而居的顾员外来到他家，说儿子顾斐这些天卧床不起，想请施耐庵前往诊视。施耐庵慨然应允，来到顾家后，只见顾公子年约二十，可是却面色萎黄，精神恍惚，脉象细涩而无力，看样子病得不轻。施耐庵便耐心地询问病情，而病者却闭目答非所问，口中只喃喃地念道：“此木为柴山山出。”施耐庵听后，心中颇觉奇怪，这分明是个上联嘛，难道公子只是苦于无对，方才……于是他便对顾公子说道：“有对了！”顾公子悠然睁开双眼333，只听施耐庵对道：“因火成烟夕夕多。”这分明是副绝对，顾公子一下子精神大振，竟坐起来喜道：“请问先生，‘山石岩前古木枯’，可有下对？”施耐庵略加思索，然后答道：“白水泉中日月明。</div>
+        <div id="content" class="content">某天，和施耐1111124457891邻而居的顾员庵比邻而居的顾员外来到他家，说儿子顾斐这些天卧床不起，想请施比邻而居的顾员外来耐庵前往诊视。施耐庵慨然应允，来到顾家后，只见顾公子年约二十，可是却面色萎黄，精神恍惚，脉象细涩而无力，看样子病得不轻。施耐庵便耐心地询问病情，而病者却闭目答非所问，口中只喃喃地念道：“此木为柴山山出。”施耐庵听后，心中颇觉奇怪，这分明是个上联嘛，难道公子只是苦于无对，方才……于是他便对顾公子说道：“有对了！”顾公子悠然睁开双眼333，只听施耐庵对道：“因火成烟夕夕多。”这分明是副绝对，顾公子一下子精神大振，竟坐起来喜道：“请问先生，‘山石岩前古木枯’，可有下对？”施耐庵略加思索，然后答道：“白水泉中日月明。</div>
       </div>
       <div class="btn-wrap">
 
@@ -24,48 +24,48 @@ export default {
     };
   },
   mounted() {
-    // var dt = document.querySelectorAll("[data-timeline]")[0];
-    // console.log(dt);
-    // console.log(document.getElementById("num").dataset.timeline);
-    // document.getElementById("num").className = "now";
-    // console.log(document.getElementsByClassName('content'));
-    // audio.addEventListener("timeupdate", function(e) {
-    //   var time = parseInt(e.target.currentTime); //获取当前时间
-    //   var lines = document.querySelectorAll("[data-timeline]");
-    //   var top = 0;
-    //   var _thisHeight = 0;
-    //   var nextLine = {
-    //     i: 0,
-    //     time: 0
-    //   };
-    //   for (var i in lines) {
-    //     var line = lines[i];
-    //     if (line.dataset != undefined) {
-    //       var timeline = parseInt(line.dataset.timeline);
-    //       if (timeline == time) {
-    //         _thisHeight = line.clientHeight; //将当前歌词高度记录
-    //         line.className = "now";
-    //         //获取下一句歌词
-    //         nextLine.i = parseInt(i) + 1;
-    //         try {
-    //           nextLine.time = lines[nextLine.i].dataset.timeline;
-    //         } catch (e) {}
-    //         if (nextLine.time > 0) {
-    //           var interval = nextLine.time - timeline;
-    //           (function(k) {
-    //             setTimeout(function() {
-    //               lines[k].className = "";
-    //             }, interval * 1000);
-    //           })(i);
-    //         }
-    //         document.querySelector(".lrc>.content").style.marginTop =
-    //           -(top - _thisHeight) + "px";
-    //       } else if (timeline < time) {
-    //         top += line.clientHeight;
-    //       }
-    //     }
-    //   }
-    // });
+    var dt = document.querySelectorAll("[data-timeline]")[0];
+    console.log(dt);
+    console.log(document.getElementById("num").dataset.timeline);
+    document.getElementById("num").className = "now";
+    console.log(document.getElementsByClassName('content'));
+    audio.addEventListener("timeupdate", function(e) {
+      var time = parseInt(e.target.currentTime); //获取当前时间
+      var lines = document.querySelectorAll("[data-timeline]");
+      var top = 0;
+      var _thisHeight = 0;
+      var nextLine = {
+        i: 0,
+        time: 0
+      };
+      for (var i in lines) {
+        var line = lines[i];
+        if (line.dataset != undefined) {
+          var timeline = parseInt(line.dataset.timeline);
+          if (timeline == time) {
+            _thisHeight = line.clientHeight; //将当前歌词高度记录
+            line.className = "now";
+            //获取下一句歌词
+            nextLine.i = parseInt(i) + 1;
+            try {
+              nextLine.time = lines[nextLine.i].dataset.timeline;
+            } catch (e) {}
+            if (nextLine.time > 0) {
+              var interval = nextLine.time - timeline;
+              (function(k) {
+                setTimeout(function() {
+                  lines[k].className = "";
+                }, interval * 1000);
+              })(i);
+            }
+            document.querySelector(".lrc>.content").style.marginTop =
+              -(top - _thisHeight) + "px";
+          } else if (timeline < time) {
+            top += line.clientHeight;
+          }
+        }
+      }
+    });
     // this.handleMark();
   },
   methods: {
